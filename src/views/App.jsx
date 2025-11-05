@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.scss";
-import Counter from "./Example/MyComponent";
-import HelloComponent from "./Example/HelloComponent";
+import MyComponent from "./Example/MyComponent";
+
 //import la es6
 //require la js5
 
@@ -20,17 +20,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <HelloComponent/>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <MyComponent/>
+        <div>Welcome to React </div>
         {/* ShortCut */}
-        <Counter/>
+        {/* <Counter/> */}
         {/* <MyComponent></MyComponent>  full */}
       </header>
     </div>

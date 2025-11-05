@@ -27,7 +27,10 @@ class HelloComponent extends React.Component {
     handleClickButton = () => {
         return alert("em yeu anh"); 
     }
+    //re-render
     render() { 
+        console.log(">>>call render: " , this.state);
+        
         return (
             <>
                 <div>
