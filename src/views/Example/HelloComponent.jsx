@@ -10,14 +10,23 @@ class HelloComponent extends React.Component {
 
     //key:value  => this.obj.key => value || this.obj["key"] => value
     state = {
-        name: "Hane",
+        name: "",
         address: "Bắc Ninh"
     }
 
-    handleOnChangeName = (name) => {
-        this.setState({name : name.target.value})
+    handleOnChangeName = (event) => {
+       
+        //nen dung setState ko nen this.state.name = event.target.value (bad code)
+        this.setState(
+            {   
+                //merge voi state(ghi de)
+                name: event.target.value, 
+                // address : this.state.address
+             })
     }
-    
+    handleClickButton = () => {
+        return alert("em yeu anh"); 
+    }
     render() { 
         return (
             <>
@@ -31,7 +40,14 @@ class HelloComponent extends React.Component {
                 <div className="first">
                     Hello , my name is {this.state.name}
                 </div>
-                <div className="second">My Address : { this.state.address}</div>
+                <div className="second">My Address : {this.state.address}</div>
+                <div className="third">
+                    <button
+                        onClick={ ()=> this.handleClickButton()}
+                    >
+                    Click me
+                    </button>
+                </div>
             </>
         )
     }
