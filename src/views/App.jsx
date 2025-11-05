@@ -21,9 +21,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <MyComponent/>
-        <div>Welcome to React </div>
         {/* ShortCut */}
-        {/* <Counter/> */}
         {/* <MyComponent></MyComponent>  full */}
       </header>
     </div>
