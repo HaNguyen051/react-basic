@@ -1,14 +1,15 @@
+
 import React from "react"; 
 
 
 class AddComponent extends React.Component {
     state = { 
-        titleJob: "", 
+        title: "", 
         salary: "",
     };
-    handleChangeTitleJob = (event) => {
+    handleChangeTitle = (event) => {
         this.setState({
-            titleJob : event.target.value
+            title : event.target.value
         })
     }
     handleChangeSalary = (event) => {
@@ -18,21 +19,36 @@ class AddComponent extends React.Component {
     }
     handleSubmit = (event) => {
         event.preventDefault(); 
-        console.log(">>> check data input : "  ,this.state)
-    }
+        console.log(">>> check data input : ", this.state); 
+
+        if (!this.state.title || !this.state.salary)
+        {
+            alert("Missing required params"); 
+            return; 
+        }
+        
+        this.props.addNewJob(
+            {id : Math.floor(Math.random() * 1001) , title: this.state.title , salary : this.state.salary}
+        )
+        this.setState({
+            title: "", 
+            salary :""
+        })
+
+        }
     render() {
         return (
             <form>
                     <label htmlFor="fname">Job Title:</label><br/>
                     <input
                         type="text"
-                        name="titleJob" //id-attribute frontend ko can cai nay
-                        value={this.state.titleJob}
-                        onChange={(event) => {this.handleChangeTitleJob(event)}}
+                        name="title" //id-attribute frontend ko can cai nay
+                        value={this.state.title}
+                        onChange={(event) => {this.handleChangeTitle(event)}}
                     /><br />
                     <label htmlFor="lname">Salary:</label><br/>
                     <input
-                        type="text"
+                        type="number"
                         name="salary"
                         value={this.state.salary}
                         onChange={(event) => { this.handleChangeSalary(event) }} /><br /><br />
