@@ -43,12 +43,8 @@ class MyComponent extends React.Component {
                         onChange={(event) => { this.handleChangeLastName(event) }} /><br /><br />
                     <input type="submit"  onClick={(event) => {this.handleSubmit(event)}} />
                 </form>
-                <ChildComponent name={'child one' } />
-
-               <ChildComponent name={'child two' }/>
-                
-               <ChildComponent name={'child three' }/>
-
+               <ChildComponent name={'Hane' } age={'25'} />
+               
             </>
         );
     }

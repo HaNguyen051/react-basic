@@ -23,10 +23,14 @@ class ChildComponent extends React.Component {
     //re render
     render() {
         // console.log("calll render :", this.state);
-        
+        // let name = this.props.name; 
+        // let age = this.props.age; 
+        //(Destructuring assigment)cu phap js do thi.props la 1 object do ten bien bang dung ten key
+        const  { name, age } = this.props; 
+        console.log("check props :", this.props);
         return (
             <>
-                <div>Child Component: { this.props.name}</div>
+                <div>Child Component name: {name} - Tuổi : {age}</div>
             </>
         );
     }
